@@ -21,7 +21,7 @@ class dif_type():
         self.file = file
 
     def txt_type(self):
-        txt_file = pd.read_table(self.file,header=None)
+        txt_file = pd.read_table(self.file,header=None,encoding='utf-8')
 
         return txt_file
 
@@ -90,7 +90,7 @@ def convert_simple():
 
     # 保存文件
     import_file = filedialog.asksaveasfilename(filetypes=file_format)
-    new_file.to_csv(import_file,line_terminator='\n\n',header=False,index=False,encoding='utf-8-sig')
+    new_file.to_csv(import_file,line_terminator='\n\n',header=False,index=False)
 
 convert_button = tk.Button(text='繁->簡',command=convert_simple,font=12)
 canvas1.create_window(210,190,window=convert_button)
